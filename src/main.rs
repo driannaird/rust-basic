@@ -301,3 +301,22 @@ fn ownership_rules() {
 
     println!("{a}");
 } // scope a selesai, a dihapus, a tidak bisa diakses lagi
+
+#[test]
+fn data_copy() {
+    let a = 10;
+    let b = a; // a copy ke b karena stack
+
+    println!("{b} {a}");
+}
+
+#[test]
+fn ownership_movement() {
+    let name1 = String::from("Drian");
+
+    // ownership dari name1 dipindahkan ke name2 karena heap
+    let name2 = name1;
+
+    println!("{name2}");
+    // println!("{name1}"); // akan error
+}
