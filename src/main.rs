@@ -320,3 +320,11 @@ fn ownership_movement() {
     println!("{name2}");
     // println!("{name1}"); // akan error
 }
+
+#[test]
+fn clone() {
+    let name1 = String::from("Drian");
+    let name2 = name1.clone();
+
+    println!("{name1} {name2}");
+}
