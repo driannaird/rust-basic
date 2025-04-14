@@ -412,3 +412,35 @@ fn loop_label() {
         number += 1;
     }
 }
+
+#[test]
+fn while_loop() {
+    let mut counter = 0;
+    while counter <= 10 {
+        if counter % 2 == 0 {
+            println!("Counter : {counter}");
+        }
+
+        counter += 1;
+    }
+}
+
+#[test]
+fn array_iteration_while() {
+    let array: [&str; 5] = ["A", "B", "C", "D", "E"];
+    let mut index = 0;
+
+    while index < array.len() {
+        println!("Value {}", array[index]);
+        index += 1;
+    }
+}
+
+#[test]
+fn array_iteration_for() {
+    let array: [&str; 5] = ["A", "B", "C", "D", "E"];
+
+    for value in array {
+        println!("Value {}", value);
+    }
+}
