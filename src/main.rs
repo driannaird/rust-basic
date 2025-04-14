@@ -328,3 +328,51 @@ fn clone() {
 
     println!("{name1} {name2}");
 }
+
+#[test]
+fn if_expression() {
+    let value = 9;
+
+    if value >= 10 {
+        println!("Good");
+    } else if value >= 6 {
+        println!("Not Bad");
+    } else if value >= 3 {
+        println!("Bad");
+    } else {
+        println!("Very Bad");
+    }
+}
+
+#[test]
+fn let_statement() {
+    let value = 3;
+    let result = if value >= 10 {
+        "Good"
+    } else if value >= 6 {
+        "Not Bad"
+    } else if value >= 3 {
+        "Bad"
+    } else {
+        "Very Bad"
+    };
+
+    println!("{result}");
+}
+
+#[test]
+fn loop_expression() {
+    let mut counter = 0;
+
+    loop {
+        counter += 1;
+
+        if counter > 10 {
+            break;
+        } else if counter % 2 == 0 {
+            continue;
+        }
+
+        println!("Counter: {}", counter);
+    }
+}
